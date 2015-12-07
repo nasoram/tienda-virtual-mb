@@ -7,7 +7,7 @@
 	<g:HTMLPanel>
 	<div id="cssmenu">
 		<ul>
-			<li class='brand'><a href='#'><span>Tienda Virtual MB</span></a></li>
+			<li class='brand'><a href="#"><span>Tienda Virtual MB</span></a></li>
 			<li id="homepage"><a href="#"><span><g:Label ui:field="labelHomepage">Catálogo</g:Label></span></a></li>
 			<li id="order"><a href="#"><span><g:Label ui:field="labelOrder">Realizar pedido</g:Label></span></a></li>
 			<li id="profile"><a href="#"><span><g:Label ui:field="labelProfile">Mi perfil</g:Label></span></a></li>

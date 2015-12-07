@@ -1,2 +1,2 @@
 serviceClass: co.edu.unal.mb.client.AdminService
-path: 9F742697EDB80D2F14372D3868D50EE6.gwt.rpc
+path: 91669D2EAFCD02D9EA5280AC75760D94.gwt.rpc

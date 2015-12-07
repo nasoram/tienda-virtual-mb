@@ -22,6 +22,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import co.edu.unal.mb.client.AdminService;
 import co.edu.unal.mb.client.AdminServiceAsync;
 import co.edu.unal.mb.client.entity.Frame;
+import co.edu.unal.mb.client.entity.OfyFrame;
+import co.edu.unal.mb.shared.FieldVerifier;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -117,6 +119,7 @@ public class AdminForm extends Composite {
 		itemDescTextArea.setWidth("216px");
 		
 		createDummyFrames();
+//		fillFramesList();
 	    
 		// Listen for mouse events on the Add button.
 	    updateButton.addClickHandler(new ClickHandler() {
@@ -126,8 +129,8 @@ public class AdminForm extends Composite {
 	    });
 	    
 	    absolutePanel.add(itemPanel, 10, 160);
-	    itemPanel.setSize("408px", "114px");
-	    absolutePanel.add(updateButton, 402, 205);
+	    itemPanel.setSize("337px", "114px");
+	    absolutePanel.add(updateButton, 405, 217);
 	    
 	    newItemPanel = new AbsolutePanel();
 	    absolutePanel.add(newItemPanel, 10, 280);
@@ -166,12 +169,32 @@ public class AdminForm extends Composite {
 	    
 	    absolutePanel.add(btnAgregar, 447, 320);
 	    
+	    Button btnActualizar = new Button("Actualizar");
+	 // Listen for mouse events on the Add button.
+	    btnActualizar.addClickHandler(new ClickHandler() {
+	      public void onClick(ClickEvent event) {
+	        fillFramesList();
+	      }
+	    });
+	    absolutePanel.add(btnActualizar, 353, 160);
+	    
 	}
 	
 	//Crear item
 	private void createItem() {
 		
-		Frame frame = new Frame(Long.parseLong(newIdTextBox.getText()), Integer.parseInt(newPriceTextBox.getText()), textArea.getText());
+		final Long newId = Long.parseLong(newIdTextBox.getText());
+		final int newPrice = Integer.parseInt(newPriceTextBox.getText());
+		final String newDesc = textArea.getText();
+		
+		if (newId == 0 || newId == null || newPrice == 0 || newDesc == "" || newDesc == null) {
+			messagesLabel.setStyleName("messageWarningLabel");
+			messagesLabel.setText("Todos los campos son requeridos.");
+			Window.alert("Todos los campos son requeridos.");
+			return;
+		}
+		
+		OfyFrame frame = new OfyFrame(newId, newPrice, newDesc);
 		
 		adminService.sendSaveItemServer(frame, new AsyncCallback<String>() {
 			
@@ -198,7 +221,7 @@ public class AdminForm extends Composite {
 	//Guardar item
 	private void saveItem() {
 		
-		Frame frame = new Frame(Long.parseLong(priceTextBox.getText()), Integer.parseInt(newPriceTextBox.getText()), frames.getItemText(frames.getSelectedIndex()));
+		OfyFrame frame = new OfyFrame(Long.parseLong(priceTextBox.getText()), Integer.parseInt(newPriceTextBox.getText()), frames.getItemText(frames.getSelectedIndex()));
 		
 		adminService.sendUpdateItemServer(frame, new AsyncCallback<String>() {
 			
@@ -232,10 +255,9 @@ public class AdminForm extends Composite {
 	}
 	
 	public void fillFramesList() {
-		adminService.listItemsServer(new AsyncCallback<List<Frame>>() {
+		adminService.listItemsServer(new AsyncCallback<List<OfyFrame>>() {
 			
 			String rpcResult;
-			List<String> result;
 
 			public void onFailure(Throwable caught) {
 				// Show the RPC error message to the user
@@ -246,11 +268,17 @@ public class AdminForm extends Composite {
 				
 			}
 
-			public void onSuccess(List<Frame> result) {
+			public void onSuccess(List<OfyFrame> result) {
 				rpcResult = "Remote Procedure Call - SUCCESS\n";
 				messagesLabel.setStyleName("messageSuccessLabel");
 				messagesLabel.setText(rpcResult);
 				Window.alert(rpcResult);
+				
+				frames.clear();
+				
+				for (int i = 0; i < result.size(); i++) {
+					frames.addItem(result.get(i).getDescription());
+				}
 				
 			}
 		});

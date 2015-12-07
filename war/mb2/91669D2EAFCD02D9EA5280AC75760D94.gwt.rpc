@@ -1,6 +1,6 @@
 co.edu.unal.mb.client.AdminService, false, false, false, false, _, 3422410162
-co.edu.unal.mb.client.entity.Frame, true, true, true, true, co.edu.unal.mb.client.entity.Frame/23004017, 23004017
-[Lco.edu.unal.mb.client.entity.Frame;, true, true, false, false, [Lco.edu.unal.mb.client.entity.Frame;/2557294196, 2557294196
+co.edu.unal.mb.client.entity.OfyFrame, true, true, true, true, co.edu.unal.mb.client.entity.OfyFrame/1597577220, 1597577220
+[Lco.edu.unal.mb.client.entity.OfyFrame;, true, true, false, false, [Lco.edu.unal.mb.client.entity.OfyFrame;/1108897565, 1108897565
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true, true, true, true, com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533, 3936916533
 com.google.gwt.user.client.rpc.RpcTokenException, true, true, false, false, com.google.gwt.user.client.rpc.RpcTokenException/2345075298, 2345075298
 com.google.gwt.user.client.rpc.XsrfToken, false, false, true, true, com.google.gwt.user.client.rpc.XsrfToken/4254043109, 4254043109

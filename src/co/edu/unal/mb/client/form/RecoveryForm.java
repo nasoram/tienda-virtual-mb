@@ -133,7 +133,7 @@ public class RecoveryForm extends Composite {
 		String validationError;
 		
 		if (!FieldVerifier.isValidUsername(username)) {
-			validationError = "'" + username + "' no es un nombre de usuario válido.";
+			validationError = "'" + username + "' no es un nombre de usuario valido.";
 			messagesLabel.setStyleName("messageWarningLabel");
 			messagesLabel.setText(validationError);
 			Window.alert(validationError);
@@ -141,7 +141,7 @@ public class RecoveryForm extends Composite {
 		}
 		
 		if (!FieldVerifier.isValidId(id)) {
-			validationError = "'" + id + "' no es una identificacion válida.";
+			validationError = "'" + id + "' no es una identificacion valida.";
 			messagesLabel.setStyleName("messageWarningLabel");
 			messagesLabel.setText(validationError);
 			Window.alert(validationError);
@@ -149,7 +149,7 @@ public class RecoveryForm extends Composite {
 		}
 		
 		if (!FieldVerifier.isValidEmail(email)) {
-			validationError = "'" + email + "' no es una dirección de correo válida.";
+			validationError = "'" + email + "' no es una dirección de correo valida.";
 			messagesLabel.setStyleName("messageWarningLabel");
 			messagesLabel.setText(validationError);
 			Window.alert(validationError);

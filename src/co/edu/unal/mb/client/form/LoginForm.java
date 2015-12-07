@@ -76,7 +76,7 @@ public class LoginForm extends Composite {
 		absPanel.add(passwordTextBox, 0, 76);
 		passwordTextBox.setSize("159px", "16px");
 		
-		registerlink = new HTMLPanel("<div id='linking'><p>Aun no eres cliente?<BR>Registrate y haz tu pedido!<BR><a href='http://www.freecsstemplates.org/'>Haz clic aqui!</a>.</p></div>");
+		registerlink = new HTMLPanel("<div id='linking'><p>Aun no eres cliente?<BR>Registrate y haz tu pedido!<BR><a href='#'>Haz clic aqui!</a>.</p></div>");
 		absPanel.add(registerlink, 246, 34);
 		registerlink.setSize("163px", "112px");
 		loginButton.addStyleName("btn btn-default");
