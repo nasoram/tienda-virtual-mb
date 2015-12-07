@@ -1,0 +1,374 @@
+/** Add css rules here for your application. */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url(img/homebg.jpg) repeat;
+    min-height: 100%;
+    padding-top: 70px;
+}
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #ffffff;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    background: url(/img/header2.jpg) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    vertical-align: middle;
+}
+
+.col-lg-12 {
+        width: 100%;
+    }
+    
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+#paneltitle {
+	text-align: center;
+	font-weight: bold;
+	font-size: 250%;
+	color: #0080c0;
+}
+
+#linking {
+	text-align: center;
+}
+
+/* Page */
+
+#page {
+	width: 940px;
+	margin: 0 auto;
+/* 	background-color: rgba(0,0,255,0.5); */
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 620px;
+	padding: 0px 10px 0px 10px;
+	background-color: #ffffff;
+}
+
+.post {
+	overflow: hidden;
+	margin-top: 20px;
+	padding: 30px 30px 0px 30px;
+	background: url(img/img11.png) repeat-x left top;
+	border: 1px solid #E2E2E2;
+}
+
+.post .title {
+	margin: 0px;
+	padding: 7px 0px 0px 0px;
+}
+
+.post .title a {
+	border: none;
+	letter-spacing: -3px;
+	text-align: left;
+	text-shadow: 1px 1px 1px #B5B5B5;
+	font-size: 36px;
+	font-weight: normal;
+	color: #000000;
+}
+
+.post .meta {
+	margin-bottom: 30px;
+	padding: 0px;
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.post .meta .date {
+	float: left;
+}
+
+.post .meta .posted {
+	float: right;
+}
+
+.post .meta a {
+}
+
+.post .entry {
+	padding: 0px 0px 30px 0px;
+	padding-bottom: 20px;
+	text-align: justify;
+}
+
+.links {
+	float: right;
+	margin: 20px 0px 30px 0px;
+	text-align: right;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.more {
+	display: block;
+	float: left;
+	padding: 0px 0px 0px 0px;
+	margin-right: 30px;
+}
+
+.comments {
+	display: block;
+	float: left;
+	padding: 0px 0px 0px 0px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 280px;
+}
+
+/* Search */
+
+#search {
+	width: 280px;
+	height: 40px;
+	padding: 20px 0px 0px 0px;
+}
+
+#search form {
+	height: 41px;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search-text {
+	width: 170px;
+	padding: 7px 5px 5px 5px;
+	border: 1px solid #DDDDDD;
+	background: #FFFFFF;
+	text-transform: lowercase;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+
+#search-submit {
+	width: 50px;
+	height: 25px;
+	border: none;
+	background: #B9B9B9;
+	color: #000000;
+}
+
+/** Example rules used by the template application (remove for your app) */
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+.sendButton {
+  display: block;
+  font-size: 16pt;
+}
+
+#rootPanel
+{
+	width: 400;
+	height: 300;
+	background-image: url(/img/homebg.jpg);
+}
+
+.tableTopSpace {
+	top-margin: 20%;
+}
+
+table#bgcontainer
+{
+	 margin-left: auto;
+	 margin-right: auto;
+	 width:480px;
+}
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+  width: 400px;
+}
+
+.dialogVPanel {
+  margin: 5px;
+}
+
+.serverResponseLabelError {
+  color: red;
+}
+
+.labels {
+	font-weight:bold;
+	color: #ffffff;
+}
+
+.mb-bg {
+	background-image: url(/img/homebg.jpg);
+    background-color: #000000;
+}
+
+.messageWarningLabel {
+/* 	padding: 265px; */
+	text-align: center;
+	font-weight:bold;
+	color: #ffffff;
+	background-color: #ff7518;
+}
+
+.messageWarningLabel:hover {
+	color: #ffffff;
+	background-color: #e45c00;
+}
+
+.messageErrorLabel {
+/* 	padding: 265px; */
+	text-align: center;
+	font-weight:bold;
+	color: #ffffff;
+	background-color: #ff0039;
+}
+
+.messageErrorLabel:hover {
+	color: #ffffff;
+	background-color: #cc002e;
+}
+
+.messageSuccessLabel {
+/* 	padding: 265px; */
+	text-align: center;
+	font-weight:bold;
+	color: #ffffff;
+	background-color: #3fb618;
+}
+
+.messageSuccessLabel:hover {
+	color: #ffffff;
+	background-color: #2f8912;
+}
+
+.buttn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-weight:bold;
+	color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #4c4c4c;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 10px 18px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.buttn:focus,
+.buttn:active:focus,
+.buttn.active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.buttn:hover,
+.buttn:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.buttn:active,
+.buttn.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.buttn.disabled,
+.buttn[disabled],
+fieldset[disabled] .buttn {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.buttn-default {
+    color: #ffffff;
+    background-color: #222222;
+    border-color: #222222;
+}
+
+.gwt-Button2 {
+  margin: 0;
+  padding: 5px 7px;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+  font-size:small;
+  background: url("images/hborder.png") repeat-x 0px -2077px;
+  border:1px solid #bbb;
+  border-bottom: 1px solid #a0a0a0;
+  border-radius: 3px;
+ -moz-border-radius: 3px;
+}
+
+.gwt-Button2:active {
+  border: 1px inset #ccc;
+}
+
+.gwt-Button2:hover {
+  border-color: #939393;
+}
+
+.gwt-Button2[disabled] {
+  cursor: default;
+  color: #888;
+}
+
+.gwt-Button2[disabled]:hover {
+  border: 1px outset #ccc;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}

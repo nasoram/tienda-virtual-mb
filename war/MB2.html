@@ -1,0 +1,94 @@
+<!doctype html>
+<!-- Bootstrap the angular app after the Google Java Script libraries are loaded. -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tienda Virtual MB</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1WEB-INF/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-cosmo.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/offcanvas.css">
+    <link type="text/css" rel="stylesheet" href="MB2.css">
+    <link rel="shortcut icon" href="/img/LOGOMBICO.ico">
+    <meta property="og:title" content="Tienda Virtual MB">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Tienda Virtual MB">
+    <meta property="og:image" content="/img/LOGOMB-BLANCO.png">
+    <meta property="og:site_name" content="">
+
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="mb2/mb2.nocache.js"></script>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tienda Virtual MB</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/catalog')}" ng-click="collapseNavbar()">
+                	<a href="#/catalog">Catalogo</a>
+                </li>
+                <li ng-class="{ active: isActive('/order/create')}" ng-click="collapseNavbar()"><a href="#/order/create" >Realizar pedido</a></li>
+                <li ng-class="{ active: isActive('/profile')}" ng-click="collapseNavbar()"><a href="#/profile">Mi perfil</a></li>
+                <li class="nav-divider"></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="signInLink" ng-hide="getSignedInState()"><a ng-click="signIn(); collapseNavbar()">Iniciar sesion</a></li>
+                <li id="signOutLink" ng-show="getSignedInState()"><a ng-click="signOut(); collapseNavbar()">Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container"> -->
+<!--     <div class="row"> -->
+<!--         <div class="col-lg-12"> -->
+<!--             <div id="rootMessages" class="alert alert-{{alertStatus}}" ng-show="rootMessages"> -->
+<!--                 <span ng-bind="rootMessages"></span> -->
+<!--                 <i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="rootMessages = ''" -->
+<!--                    ng-show="rootMessages"></i> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!--     <ng-view></ng-view> -->
+<!-- </div> -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+<!-- Put the signInButton to invoke the gapi.signin.render to restore the credential if stored in cookie. -->
+<span id="signInButton" style="display: none" disabled="true"></span>
+
+<!-- ================================================================ -->
+<!-- <table align="center" id="tableTopSpace"></table> -->
+<!--     <table align="center"> -->
+<!--       <tr> -->
+<!--         <td align="center" id="messagesLabelContainer"></td>         -->
+<!--       </tr> -->
+<!--       <tr> -->
+<!--         <td align="center" id="profileForm"></td> -->
+<!--       </tr> -->
+<!--     </table> -->
+<!-- ==================================================================== -->
+
+</body>
+</html>

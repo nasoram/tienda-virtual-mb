@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+	<div id="cssmenu">
+		<ul>
+			<li class='brand'><a href='#'><span>Tienda Virtual MB</span></a></li>
+			<li id="homepage"><a href="#"><span><g:Label ui:field="labelHomepage">Catálogo</g:Label></span></a></li>
+			<li id="order"><a href="#"><span><g:Label ui:field="labelOrder">Realizar pedido</g:Label></span></a></li>
+			<li id="profile"><a href="#"><span><g:Label ui:field="labelProfile">Mi perfil</g:Label></span></a></li>
+			<li id="login"><a href="#"><span><g:Label ui:field="labelLogin">Iniciar sesión</g:Label></span></a></li>
+			<li id="register"><a href="#"><span><g:Label ui:field="labelRegister">Registrarse</g:Label></span></a></li>
+			<li id="recovery"><a href="#"><span><g:Label ui:field="labelRecovery">Recuperación</g:Label></span></a></li>
+			<li id="admin"><a href="#"><span><g:Label ui:field="labelAdmin">Administrar</g:Label></span></a></li>
+<!-- 			<li><a href='#'><span>Sesión</span></a></li> -->
+		</ul>
+	</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 
