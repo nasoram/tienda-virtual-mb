@@ -1,0 +1,2 @@
+serviceClass: co.edu.unal.mb.client.RegisterService
+path: 32520E866730CCDE14C0F95C26A60B6D.gwt.rpc

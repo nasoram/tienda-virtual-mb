@@ -27,14 +27,14 @@
   "ownerName" : "edu.co",
   "packagePath" : "unal.mb.client.entity",
   "methods" : {
-    "frameendpoint.getFrame" : {
+    "frameendpoint.removeFrame" : {
       "path" : "frame/{id}",
-      "httpMethod" : "GET",
+      "httpMethod" : "DELETE",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame",
+      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame",
       "request" : {
         "parameters" : {
           "id" : {
@@ -43,6 +43,22 @@
           }
         },
         "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "frameendpoint.insertFrame" : {
+      "path" : "frame",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.insertFrame",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -89,14 +105,14 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "frameendpoint.removeFrame" : {
+    "frameendpoint.getFrame" : {
       "path" : "frame/{id}",
-      "httpMethod" : "DELETE",
+      "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame",
+      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame",
       "request" : {
         "parameters" : {
           "id" : {
@@ -105,22 +121,6 @@
           }
         },
         "body" : "empty"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
-    "frameendpoint.insertFrame" : {
-      "path" : "frame",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.insertFrame",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -162,7 +162,12 @@
       }
     },
     "methods" : {
-      "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame" : {
+      "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame" : {
+      },
+      "co.edu.unal.mb.client.entity.FrameEndpoint.insertFrame" : {
+        "request" : {
+          "$ref" : "Frame"
+        },
         "response" : {
           "$ref" : "Frame"
         }
@@ -180,12 +185,7 @@
           "$ref" : "Frame"
         }
       },
-      "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame" : {
-      },
-      "co.edu.unal.mb.client.entity.FrameEndpoint.insertFrame" : {
-        "request" : {
-          "$ref" : "Frame"
-        },
+      "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame" : {
         "response" : {
           "$ref" : "Frame"
         }

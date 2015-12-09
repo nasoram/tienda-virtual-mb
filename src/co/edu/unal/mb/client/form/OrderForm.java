@@ -82,6 +82,8 @@ public class OrderForm extends Composite {
 		
 		absolutePanel.add(messagesLabel, 10, 0);
 		messagesLabel.setSize("530px", "60px");
+		messagesLabel.setStyleName("messageInfoLabel");
+		messagesLabel.setText("Bienvenido!");
 		titlePanel = new HTMLPanel("<div id='paneltitle'>Realizar pedido</div>");
 		absolutePanel.add(titlePanel, 162, 66);
 

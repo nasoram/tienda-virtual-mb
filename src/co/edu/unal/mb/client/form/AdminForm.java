@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AbsolutePanel;
@@ -25,20 +26,8 @@ import co.edu.unal.mb.client.entity.Frame;
 import co.edu.unal.mb.client.entity.OfyFrame;
 import co.edu.unal.mb.shared.FieldVerifier;
 
-/**
- * Entry point classes define <code>onModuleLoad()</code>.
- */
 public class AdminForm extends Composite {
-	/**
-	 * The message displayed to the user when the server cannot be reached or
-	 * returns an error.
-	 */
-	private static final String SERVER_ERROR = "An error occurred while "
-			+ "attempting to contact the server. Please check your network " + "connection and try again.";
 
-	/**
-	 * Create a remote service proxy to talk to the server-side Greeting service.
-	 */
 	private AdminServiceAsync adminService = GWT.create(AdminService.class);
 	
 	private AbsolutePanel absolutePanel;
@@ -78,6 +67,8 @@ public class AdminForm extends Composite {
 		
 		absolutePanel.add(messagesLabel, 10, 0);
 		messagesLabel.setSize("530px", "60px");
+		messagesLabel.setStyleName("messageInfoLabel");
+		messagesLabel.setText("Bienvenido Admin!");
 		titlePanel = new HTMLPanel("<div id='paneltitle'>Edicion de<BR>items</div>");
 		absolutePanel.add(titlePanel, 199, 66);
 
@@ -194,7 +185,10 @@ public class AdminForm extends Composite {
 			return;
 		}
 		
-		OfyFrame frame = new OfyFrame(newId, newPrice, newDesc);
+		OfyFrame frame = new OfyFrame();
+		frame.id = newId;
+		frame.frameprice = newPrice;
+		frame.description = newDesc;
 		
 		adminService.sendSaveItemServer(frame, new AsyncCallback<String>() {
 			
@@ -202,7 +196,8 @@ public class AdminForm extends Composite {
 			
 			public void onFailure(Throwable caught) {
 				// Show the RPC error message to the user
-				rpcResult = "Remote Procedure Call - Failure\n" + SERVER_ERROR;
+				rpcResult = "Remote Procedure Call - Failure\n" 
+							+ "Error al crear nuevo item.";
 				messagesLabel.setStyleName("messageErrorLabel");
 				messagesLabel.setText(rpcResult);
 				Window.alert(rpcResult);
@@ -221,7 +216,10 @@ public class AdminForm extends Composite {
 	//Guardar item
 	private void saveItem() {
 		
-		OfyFrame frame = new OfyFrame(Long.parseLong(priceTextBox.getText()), Integer.parseInt(newPriceTextBox.getText()), frames.getItemText(frames.getSelectedIndex()));
+		OfyFrame frame = new OfyFrame();
+		frame.id = Long.parseLong(priceTextBox.getText());
+		frame.frameprice = Integer.parseInt(newPriceTextBox.getText());
+		frame.description = frames.getItemText(frames.getSelectedIndex());
 		
 		adminService.sendUpdateItemServer(frame, new AsyncCallback<String>() {
 			
@@ -229,7 +227,8 @@ public class AdminForm extends Composite {
 			
 			public void onFailure(Throwable caught) {
 				// Show the RPC error message to the user
-				rpcResult = "Remote Procedure Call - Failure\n" + SERVER_ERROR;
+				rpcResult = "Remote Procedure Call - Failure\n" 
+							+ "Error al guardar item.";
 				messagesLabel.setStyleName("messageErrorLabel");
 				messagesLabel.setText(rpcResult);
 				Window.alert(rpcResult);
@@ -261,7 +260,8 @@ public class AdminForm extends Composite {
 
 			public void onFailure(Throwable caught) {
 				// Show the RPC error message to the user
-				rpcResult = "Remote Procedure Call - Failure\n" + SERVER_ERROR;
+				rpcResult = "Remote Procedure Call - Failure\n" 
+							+ "Error al obtener lista de items.";
 				messagesLabel.setStyleName("messageErrorLabel");
 				messagesLabel.setText(rpcResult);
 				Window.alert(rpcResult);
@@ -277,7 +277,7 @@ public class AdminForm extends Composite {
 				frames.clear();
 				
 				for (int i = 0; i < result.size(); i++) {
-					frames.addItem(result.get(i).getDescription());
+					frames.addItem(result.get(i).description);
 				}
 				
 			}

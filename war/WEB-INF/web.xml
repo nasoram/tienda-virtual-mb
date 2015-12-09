@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-  <!-- Servlets -->
+<!-- SERVLETS -->
+  <!-- Admin -->
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
+    <servlet-name>adminServlet</servlet-name>
     <servlet-class>co.edu.unal.mb.server.AdminServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/mb2/greet</url-pattern>
+    <servlet-name>adminServlet</servlet-name>
+    <url-pattern>/mb2/admin</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Register -->
+  <servlet>
+    <servlet-name>registerServlet</servlet-name>
+    <servlet-class>co.edu.unal.mb.server.RegisterServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>registerServlet</servlet-name>
+    <url-pattern>/mb2/register</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->

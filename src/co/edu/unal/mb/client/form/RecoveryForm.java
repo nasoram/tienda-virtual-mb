@@ -62,6 +62,8 @@ public class RecoveryForm extends Composite {
 		messagesLabel = new Label();
 		absolutePanel.add(messagesLabel, 10, 0);
 		messagesLabel.setSize("530px", "60px");
+		messagesLabel.setStyleName("messageInfoLabel");
+		messagesLabel.setText("Recupera tu contrasena para iniciar tu sesion correctamente");
 		
 		titlePanel = new HTMLPanel("<div id='paneltitle'>Recuperacion de<BR>Contrasena</div>");
 		absolutePanel.add(titlePanel, 151, 66);

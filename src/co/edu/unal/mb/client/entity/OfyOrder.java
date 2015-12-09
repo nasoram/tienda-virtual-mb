@@ -11,42 +11,41 @@ import com.googlecode.objectify.annotation.Index;
 @Index
 public class OfyOrder implements Serializable{
 	
-	public OfyOrder() {}
-
-	public OfyOrder(Long id, int frameprice, int lensesprice) {
-		super();
-		this.id = id;
-		this.frameprice = frameprice;
-		this.lensesprice = lensesprice;
-	}
-
-	public Long getId() {
-		return id;
-	}
+	@Id public Long id;
+	public int frameprice;
+	public int lensesprice;
 	
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public OfyOrder() {}
+//
+//	public OfyOrder(Long id, int frameprice, int lensesprice) {
+//		super();
+//		this.id = id;
+//		this.frameprice = frameprice;
+//		this.lensesprice = lensesprice;
+//	}
+//
+//	public Long getId() {
+//		return id;
+//	}
+//	
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+//	
+//	public int getFramePrice() {
+//		return frameprice;
+//	}
+//	
+//	public void setFramePrice(int frameprice) {
+//		this.frameprice = frameprice;
+//	}
+//	
+//	public int getLensesPrice() {
+//		return lensesprice;
+//	}
+//	
+//	public void setLensesPrice(int lensesprice) {
+//		this.lensesprice = lensesprice;
+//	}
 	
-	public int getFramePrice() {
-		return frameprice;
-	}
-	
-	public void setFramePrice(int frameprice) {
-		this.frameprice = frameprice;
-	}
-	
-	public int getLensesPrice() {
-		return lensesprice;
-	}
-	
-	public void setLensesPrice(int lensesprice) {
-		this.lensesprice = lensesprice;
-	}
-	
-	@Id 
-	private Long id;
-	private int frameprice;
-	private int lensesprice;
-
 }

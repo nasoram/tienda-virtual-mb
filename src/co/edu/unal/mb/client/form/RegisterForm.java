@@ -19,6 +19,9 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 import co.edu.unal.mb.client.AdminService;
 import co.edu.unal.mb.client.AdminServiceAsync;
+import co.edu.unal.mb.client.RegisterService;
+import co.edu.unal.mb.client.RegisterServiceAsync;
+import co.edu.unal.mb.client.entity.OfyProfile;
 import co.edu.unal.mb.shared.FieldVerifier;
 import co.edu.unal.mb.shared.StringHelper;
 import com.google.gwt.user.client.ui.HTMLPanel;
@@ -37,7 +40,7 @@ public class RegisterForm extends Composite {
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
 	 */
-	private final AdminServiceAsync greetingService = GWT.create(AdminService.class);
+	private final RegisterServiceAsync registrationService = GWT.create(RegisterService.class);
 
 	private AbsolutePanel absolutePanel;
 	
@@ -70,6 +73,8 @@ public class RegisterForm extends Composite {
 		messagesLabel = new Label();
 		absolutePanel.add(messagesLabel, 10, 0);
 		messagesLabel.setSize("530px", "60px");
+		messagesLabel.setStyleName("messageInfoLabel");
+		messagesLabel.setText("Para hacer un pedido\ndebes iniciar sesion");
 		
 		titlePanel = new HTMLPanel("<div id='paneltitle'>Formulario<BR>de Registro</div>");
 		absolutePanel.add(titlePanel, 191, 66);
@@ -88,7 +93,7 @@ public class RegisterForm extends Composite {
 		emailLabel = new Label("Correo electronico:");
 		contactLabel = new Label("Numero de contacto:");
 		passwordLabel = new Label("Contrasena:");
-		confPasswordLabel = new Label("Nueva contrasena");
+		confPasswordLabel = new Label("Repita contrasena:");
 		
 		saveButton = new Button("Registrarse");
 		absPanel = new AbsolutePanel();
@@ -225,33 +230,34 @@ public class RegisterForm extends Composite {
 			return;
 		}
 		
-		String textToServer = StringHelper.assembleProfile(
-				usernameTextBox.getText(),
-				nameTextBox.getText(),
-				idTextBox.getText(),
-				emailTextBox.getText(),
-				contactTextBox.getText(),
-				passwordTextBox.getText());
+		OfyProfile profile = new OfyProfile();
+		profile.username = usernameTextBox.getText();
+		profile.name = nameTextBox.getText();
+		profile.id = Integer.parseInt(idTextBox.getText());
+		profile.email = emailTextBox.getText();
+		profile.contact = contactTextBox.getText();
+		profile.password = passwordTextBox.getText();
 		
-//		greetingService.sendSaveItemServer(textToServer, new AsyncCallback<String>() {
-//			
-//			String rpcResult;
-//			
-//			public void onFailure(Throwable caught) {
-//				// Show the RPC error message to the user
-//				rpcResult = "Remote Procedure Call - Failure\n" + SERVER_ERROR;
-//				messagesLabel.setStyleName("messageErrorLabel");
-//				messagesLabel.setText(rpcResult);
-//				Window.alert(rpcResult);
-//			}
-//
-//			public void onSuccess(String result) {
-//				rpcResult = "Remote Procedure Call - SUCCESS\n" + result;
-//				messagesLabel.setStyleName("messageSuccessLabel");
-//				messagesLabel.setText(rpcResult);
-//				Window.alert(rpcResult);
-//			}
-//		});
+		registrationService.sendRegisterProfileServer(profile, new AsyncCallback<String>() {
+			
+			String rpcResult;
+			
+			public void onFailure(Throwable caught) {
+				// Show the RPC error message to the user
+				rpcResult = "Remote Procedure Call - Failure\n" 
+							+ "Error al registrar nuevo usuario.";
+				messagesLabel.setStyleName("messageErrorLabel");
+				messagesLabel.setText(rpcResult);
+				Window.alert(rpcResult);
+			}
+
+			public void onSuccess(String result) {
+				rpcResult = "Remote Procedure Call - SUCCESS\n" + result;
+				messagesLabel.setStyleName("messageSuccessLabel");
+				messagesLabel.setText(rpcResult);
+				Window.alert(rpcResult);
+			}
+		});
 		
 	}
 }

@@ -152,7 +152,7 @@ a:hover {
 	border: 1px solid #DDDDDD;
 	background: #FFFFFF;
 	text-transform: lowercase;
-	font: normal 11px Arial, Helvetica, sans-serif;
+	font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
 	color: #000000;
 }
 
@@ -160,8 +160,8 @@ a:hover {
 	width: 50px;
 	height: 25px;
 	border: none;
-	background: #B9B9B9;
-	color: #000000;
+	background: #4b4b4b;
+	color: #ffffff;
 }
 
 /* Menu */

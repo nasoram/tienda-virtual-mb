@@ -23,21 +23,9 @@ import co.edu.unal.mb.shared.FieldVerifier;
 import co.edu.unal.mb.shared.StringHelper;
 import com.google.gwt.user.client.ui.HTMLPanel;
 
-/**
- * Entry point classes define <code>onModuleLoad()</code>.
- */
 public class LoginForm extends Composite {
-	/**
-	 * The message displayed to the user when the server cannot be reached or
-	 * returns an error.
-	 */
-	private static final String SERVER_ERROR = "An error occurred while "
-			+ "attempting to contact the server. Please check your network " + "connection and try again.";
 
-	/**
-	 * Create a remote service proxy to talk to the server-side Greeting service.
-	 */
-	private final AdminServiceAsync greetingService = GWT.create(AdminService.class);
+	private final AdminServiceAsync loginService = GWT.create(AdminService.class);
 
 	private AbsolutePanel absolutePanel;
 	
@@ -60,6 +48,8 @@ public class LoginForm extends Composite {
 		messagesLabel = new Label();
 		absolutePanel.add(messagesLabel, 10, 0);
 		messagesLabel.setSize("530px", "60px");
+		messagesLabel.setStyleName("messageInfoLabel");
+		messagesLabel.setText("Para hacer un pedido\ndebes iniciar sesion");
 		
 		usernameTextBox = new TextBox();
 		passwordTextBox = new PasswordTextBox();

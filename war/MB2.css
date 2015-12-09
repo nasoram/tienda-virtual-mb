@@ -11,18 +11,18 @@ body {
 }
 
 .intro-header {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     color: #ffffff;
     text-shadow: black 0.1em 0.1em 0.2em;
     background: url(/img/header2.jpg) no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     text-align: center;
 }
 
 .intro-message {
     position: relative;
-    padding-top: 5%;
+    padding-top: 0%;
     padding-bottom: 5%;
     vertical-align: middle;
 }
@@ -44,13 +44,24 @@ body {
 }
 
 #linking {
+	color: #ffffff;
 	text-align: center;
+}
+
+#formbg {
+	background-color: #ffffff;
+}
+
+.gwt-Label {
+	font-weight: bold;
+	color: #ffffff;
 }
 
 /* Page */
 
 #page {
 	width: 940px;
+	padding: 0px 0px 0px 0px;
 	margin: 0 auto;
 /* 	background-color: rgba(0,0,255,0.5); */
 }
@@ -60,8 +71,8 @@ body {
 #content {
 	float: left;
 	width: 620px;
-	padding: 0px 10px 0px 10px;
-	background-color: #ffffff;
+	padding: 0px 0px 0px 0px;
+	background-color: #transparent;
 }
 
 .post {
@@ -69,7 +80,6 @@ body {
 	margin-top: 20px;
 	padding: 30px 30px 0px 30px;
 	background: url(img/img11.png) repeat-x left top;
-	border: 1px solid #E2E2E2;
 }
 
 .post .title {
@@ -235,6 +245,19 @@ table#bgcontainer
 .mb-bg {
 	background-image: url(/img/homebg.jpg);
     background-color: #000000;
+}
+
+.messageInfoLabel {
+/* 	padding: 265px; */
+	text-align: center;
+	font-weight:bold;
+	color: #ffffff;
+	background-color: #9954bb;
+}
+
+.messageInfoLabel:hover {
+	color: #ffffff;
+	background-color: #7e3f9d;
 }
 
 .messageWarningLabel {

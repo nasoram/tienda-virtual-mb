@@ -14,7 +14,7 @@ public class FieldVerifier {
 	
 	//Letras y numeros, 4 - 15 caracteres
 	public static boolean isValidPassword(String password) {
-		return (!password.matches("^[0-9A-Z]{4,15}$")) ? false : true;
+		return (!password.matches("^[0-9a-zA-Z]{4,15}$")) ? false : true;
 	}
 	
 	//Solo numeros, 7 - 15 caracteres
@@ -33,7 +33,11 @@ public class FieldVerifier {
 	}
 	
 	public static boolean passwordsMatch(String password1, String password2){
-		return (isValidPassword(password1) && isValidPassword(password2) && password1==password2);
+		return (
+				isValidPassword(password1) && isValidPassword(password2) && 
+				!password1.equals("") && !password1.isEmpty() && 
+				!password2.equals("") && !password2.isEmpty() && 
+				password1==password2);
 	}
 	
 	public static boolean isValidEmail(String email) {

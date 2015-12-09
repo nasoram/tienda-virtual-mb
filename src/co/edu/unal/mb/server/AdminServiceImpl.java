@@ -22,9 +22,9 @@ import co.edu.unal.mb.client.entity.OfyProfile;
 @SuppressWarnings("serial")
 public class AdminServiceImpl extends RemoteServiceServlet implements AdminService {
 	
-//	FrameEndpoint frameep = new FrameEndpoint();
 	Objectify ofy;
 	
+	@Override
 	public void init( ServletConfig sc )
 	{
 		try
@@ -43,10 +43,6 @@ public class AdminServiceImpl extends RemoteServiceServlet implements AdminServi
 	}
 
 	public String sendSaveItemServer(OfyFrame frame) throws IllegalArgumentException {
-		
-//		frameep.insertFrame(frame);
-//		return frameep.toString();
-		
 		Key<OfyFrame> stored = storeOfyFrame(frame);
 		String result;
 		
@@ -58,11 +54,7 @@ public class AdminServiceImpl extends RemoteServiceServlet implements AdminServi
 	}
 	
 	public String sendUpdateItemServer(OfyFrame frame) throws IllegalArgumentException {
-	
-//		frameep.updateFrame(frame);
-//		return frameep.toString();
-		
-		OfyFrame loaded = loadOfyFrame( frame.getId() );
+		OfyFrame loaded = loadOfyFrame( frame.id );
 		String result;
 		
 		if (loaded == null) result = "ID NOT FOUND";
@@ -73,9 +65,6 @@ public class AdminServiceImpl extends RemoteServiceServlet implements AdminServi
 	}
 	
 	public List<OfyFrame> listItemsServer() throws IllegalArgumentException {
-		
-//		return (List<Frame>) frameep.listFrame(null, null);
-		
 		return ofy.load().type(OfyFrame.class).list();
 	}
 	
@@ -89,7 +78,10 @@ public class AdminServiceImpl extends RemoteServiceServlet implements AdminServi
 	}
 
 	protected static OfyFrame createOfyFrame( Long id, int frameprice, String description ) {
-		OfyFrame frame = new OfyFrame( id, frameprice, description );
+		OfyFrame frame = new OfyFrame();
+		frame.id = id;
+		frame.frameprice = frameprice;
+		frame.description = description;
 		return frame;
 	}
 

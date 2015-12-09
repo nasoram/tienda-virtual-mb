@@ -5,7 +5,6 @@ import java.util.List;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
-import co.edu.unal.mb.client.entity.Frame;
 import co.edu.unal.mb.client.entity.OfyFrame;
 
 /**
