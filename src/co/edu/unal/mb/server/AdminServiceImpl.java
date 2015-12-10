@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.LoadResult;
@@ -81,6 +82,7 @@ public class AdminServiceImpl extends RemoteServiceServlet implements AdminServi
 	
 	public List<OfyFrame> listItemsServer() throws IllegalArgumentException {
 //		QueryKeys<OfyFrame> q = ObjectifyService.ofy().load().type(OfyFrame.class).keys();
+		Window.alert("ENTREE!!");
 		return ObjectifyService.ofy().load().type(OfyFrame.class).filter("id !=",0).list();
 		
 //		Query q = new Query(OfyFrame.class);
