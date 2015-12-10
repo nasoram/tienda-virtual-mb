@@ -10,6 +10,7 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.LoadResult;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.util.Closeable;
 
 import co.edu.unal.mb.client.AdminService;
 import co.edu.unal.mb.client.entity.OfyFrame;
@@ -23,6 +24,20 @@ import co.edu.unal.mb.client.entity.OfyProfile;
 public class AdminServiceImpl extends RemoteServiceServlet implements AdminService {
 	
 	Objectify ofy;
+	private Closeable closeable;
+	
+//	@Before
+//    public void setUp() {
+//		ObjectifyService.register( OfyFrame.class );
+//		ObjectifyService.register( OfyOrder.class );
+//		ObjectifyService.register( OfyProfile.class );
+//		closeable = ObjectifyService.begin();
+//	}
+//	
+//	@After
+//    public void tearDown() {
+//        closeable.close();
+//    }
 	
 	@Override
 	public void init( ServletConfig sc )
@@ -65,7 +80,13 @@ public class AdminServiceImpl extends RemoteServiceServlet implements AdminServi
 	}
 	
 	public List<OfyFrame> listItemsServer() throws IllegalArgumentException {
-		return ofy.load().type(OfyFrame.class).list();
+//		QueryKeys<OfyFrame> q = ObjectifyService.ofy().load().type(OfyFrame.class).keys();
+		return ObjectifyService.ofy().load().type(OfyFrame.class).filter("id !=",0).list();
+		
+//		Query q = new Query(OfyFrame.class);
+//		ObjectifyService.ofy().
+//		List<OfyFrame> frames = ofy.prepare(q).asList();
+//		    return frames;
 	}
 	
 	protected Key<OfyFrame> storeOfyFrame(OfyFrame frame) {

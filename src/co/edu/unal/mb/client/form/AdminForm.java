@@ -5,7 +5,6 @@ import java.util.List;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AbsolutePanel;
@@ -22,9 +21,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 import co.edu.unal.mb.client.AdminService;
 import co.edu.unal.mb.client.AdminServiceAsync;
-import co.edu.unal.mb.client.entity.Frame;
 import co.edu.unal.mb.client.entity.OfyFrame;
-import co.edu.unal.mb.shared.FieldVerifier;
 
 public class AdminForm extends Composite {
 
@@ -109,8 +106,8 @@ public class AdminForm extends Composite {
 		namePanel.setCellHorizontalAlignment(itemDescTextArea, HasHorizontalAlignment.ALIGN_RIGHT);
 		itemDescTextArea.setWidth("216px");
 		
-		createDummyFrames();
-//		fillFramesList();
+//		createDummyFrames();
+		fillFramesList();
 	    
 		// Listen for mouse events on the Add button.
 	    updateButton.addClickHandler(new ClickHandler() {

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-import co.edu.unal.mb.client.entity.Frame;
 import co.edu.unal.mb.client.entity.OfyFrame;
 
 /**

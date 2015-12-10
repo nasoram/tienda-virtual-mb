@@ -13,15 +13,15 @@ public class OfyFrame implements Serializable {
 	public int frameprice;
 	public String description;
 	
-//	public OfyFrame() {}
-//	
-//	public OfyFrame(Long id, int frameprice, String description) {
-//		super();
-//		this.id = id;
-//		this.frameprice = frameprice;
-//		this.description = description;
-//	}
-//	
+	public OfyFrame() {super();}
+	
+	public OfyFrame(Long id, int frameprice, String description) {
+		super();
+		this.id = id;
+		this.frameprice = frameprice;
+		this.description = description;
+	}
+	
 //	public Long getId() {
 //		return id;
 //	}

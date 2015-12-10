@@ -8,6 +8,8 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 import co.edu.unal.mb.client.form.AdminForm;
+import co.edu.unal.mb.client.form.CatalogForm;
+import co.edu.unal.mb.client.form.Homepage;
 import co.edu.unal.mb.client.form.LoginForm;
 import co.edu.unal.mb.client.form.OrderForm;
 import co.edu.unal.mb.client.form.ProfileForm;
@@ -23,6 +25,7 @@ public class Menu extends Composite {
 
 	private static MenuUiBinder uiBinder = GWT.create(MenuUiBinder.class);
 	@UiField Label labelHomepage;
+	@UiField Label labelCatalog;
 	@UiField Label labelOrder;
 	@UiField Label labelProfile;
 	@UiField Label labelLogin;
@@ -40,10 +43,24 @@ public class Menu extends Composite {
 	@UiHandler("labelHomepage")
 	void onLabelHomepageClick(ClickEvent event) {
 		Limpiar();
-		DOM.getElementById("content").setAttribute("background-color", "transparent");
+		RootPanel.get("wpost").clear();
+		DOM.getElementById("content").setAttribute("background-color", "#ffffff");
 		DOM.getElementById("homepage").setAttribute("class", "current_page_item");
 		
+		Post post = new Post();
+		post.setWidgetPanel(new Homepage());
+		RootPanel.get("wpost").add(post);
+	}
+	@UiHandler("labelCatalog")
+	void onLabelCatalogClick(ClickEvent event) {
+		Limpiar();
 		RootPanel.get("wpost").clear();
+		DOM.getElementById("content").setAttribute("background-color", "transparent");
+		DOM.getElementById("catalog").setAttribute("class", "current_page_item");
+		
+		Post post = new Post();
+		post.setWidgetPanel(new CatalogForm());
+		RootPanel.get("wpost").add(post);
 	}
 	@UiHandler("labelOrder")
 	void onLabelOrderClick(ClickEvent event) {
@@ -110,6 +127,7 @@ public class Menu extends Composite {
 	}
 	void Limpiar(){
 		DOM.getElementById("homepage").setAttribute("class", "");
+		DOM.getElementById("catalog").setAttribute("class", "");
 		DOM.getElementById("order").setAttribute("class", "");
 		DOM.getElementById("profile").setAttribute("class", "");
 		DOM.getElementById("login").setAttribute("class", "");

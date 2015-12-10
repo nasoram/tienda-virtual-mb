@@ -27,14 +27,14 @@
   "ownerName" : "edu.co",
   "packagePath" : "unal.mb.client.entity",
   "methods" : {
-    "frameendpoint.removeFrame" : {
+    "frameendpoint.getFrame" : {
       "path" : "frame/{id}",
-      "httpMethod" : "DELETE",
+      "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame",
+      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame",
       "request" : {
         "parameters" : {
           "id" : {
@@ -45,7 +45,7 @@
         "body" : "empty"
       },
       "response" : {
-        "body" : "empty"
+        "body" : "autoTemplate(backendResponse)"
       }
     },
     "frameendpoint.insertFrame" : {
@@ -105,14 +105,14 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "frameendpoint.getFrame" : {
+    "frameendpoint.removeFrame" : {
       "path" : "frame/{id}",
-      "httpMethod" : "GET",
+      "httpMethod" : "DELETE",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame",
+      "rosyMethod" : "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame",
       "request" : {
         "parameters" : {
           "id" : {
@@ -123,7 +123,7 @@
         "body" : "empty"
       },
       "response" : {
-        "body" : "autoTemplate(backendResponse)"
+        "body" : "empty"
       }
     }
   },
@@ -162,7 +162,10 @@
       }
     },
     "methods" : {
-      "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame" : {
+      "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame" : {
+        "response" : {
+          "$ref" : "Frame"
+        }
       },
       "co.edu.unal.mb.client.entity.FrameEndpoint.insertFrame" : {
         "request" : {
@@ -185,10 +188,7 @@
           "$ref" : "Frame"
         }
       },
-      "co.edu.unal.mb.client.entity.FrameEndpoint.getFrame" : {
-        "response" : {
-          "$ref" : "Frame"
-        }
+      "co.edu.unal.mb.client.entity.FrameEndpoint.removeFrame" : {
       }
     }
   }

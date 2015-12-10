@@ -16,18 +16,18 @@ public class OfyProfile implements Serializable {
 	public String contact;
 	public String password;
 	
-//	public OfyProfile() {}
-//	
-//	public OfyProfile(String username, String name, int id, String email, String contact, String password) {
-//		super();
-//		this.username = username;
-//		this.name = name;
-//		this.id = id;
-//		this.email = email;
-//		this.contact = contact;
-//		this.password = password;
-//	}
-//
+	public OfyProfile() {}
+	
+	public OfyProfile(String username, String name, int id, String email, String contact, String password) {
+		super();
+		this.username = username;
+		this.name = name;
+		this.id = id;
+		this.email = email;
+		this.contact = contact;
+		this.password = password;
+	}
+
 //	public String getUsername() {
 //		return username;
 //	}

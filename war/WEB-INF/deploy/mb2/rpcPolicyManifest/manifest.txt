@@ -1,4 +1,2 @@
 # Module mb2
 # RPC service class, partial path of RPC policy file
-co.edu.unal.mb.client.AdminService, 91669D2EAFCD02D9EA5280AC75760D94.gwt.rpc
-co.edu.unal.mb.client.RegisterService, 32520E866730CCDE14C0F95C26A60B6D.gwt.rpc

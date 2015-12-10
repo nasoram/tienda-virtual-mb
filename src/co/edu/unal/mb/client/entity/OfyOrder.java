@@ -9,21 +9,21 @@ import com.googlecode.objectify.annotation.Index;
 @SuppressWarnings("serial")
 @Entity
 @Index
-public class OfyOrder implements Serializable{
+public class OfyOrder implements Serializable {
 	
 	@Id public Long id;
 	public int frameprice;
 	public int lensesprice;
 	
-//	public OfyOrder() {}
-//
-//	public OfyOrder(Long id, int frameprice, int lensesprice) {
-//		super();
-//		this.id = id;
-//		this.frameprice = frameprice;
-//		this.lensesprice = lensesprice;
-//	}
-//
+	public OfyOrder() {}
+
+	public OfyOrder(Long id, int frameprice, int lensesprice) {
+		super();
+		this.id = id;
+		this.frameprice = frameprice;
+		this.lensesprice = lensesprice;
+	}
+
 //	public Long getId() {
 //		return id;
 //	}

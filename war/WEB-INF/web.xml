@@ -23,6 +23,17 @@
     <url-pattern>/mb2/register</url-pattern>
   </servlet-mapping>
   
+	<!-- Register -->
+  <servlet>
+    <servlet-name>orderServlet</servlet-name>
+    <servlet-class>co.edu.unal.mb.server.OrderServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>orderServlet</servlet-name>
+    <url-pattern>/mb2/order</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

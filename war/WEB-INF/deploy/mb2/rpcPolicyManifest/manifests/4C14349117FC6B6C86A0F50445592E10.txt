@@ -1,0 +1,2 @@
+serviceClass: co.edu.unal.mb.client.OrderService
+path: F1431ECB2AB109392DC5EB68C1D8ECAE.gwt.rpc

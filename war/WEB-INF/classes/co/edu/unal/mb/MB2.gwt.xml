@@ -21,8 +21,6 @@
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='co.edu.unal.mb.client.MB2'/>
-<!--   <entry-point class='co.edu.unal.mb.client.MBOrderForm'/> -->
-<!--   <entry-point class='co.edu.unal.mb.client.MBProfileForm'/> -->
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

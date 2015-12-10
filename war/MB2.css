@@ -41,6 +41,7 @@ body {
 	font-weight: bold;
 	font-size: 250%;
 	color: #0080c0;
+	text-shadow:5px 5px 5px #000000;
 }
 
 #linking {
@@ -48,13 +49,83 @@ body {
 	text-align: center;
 }
 
+/*Homepage*/
+
+div.image {
+    margin: 5px;
+    float: left;
+    width: 180px;
+}
+
+div.image image {
+    width: 100%;
+    height: auto;
+}
+
+div.desctitle {
+	font-size: 250%;
+	font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+	text-shadow:5px 5px 5px #000000;
+}
+
+div.descript {
+	font-size: 150%;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+	text-shadow:5px 5px 5px #000000;
+}
+
 #formbg {
 	background-color: #ffffff;
 }
 
+/* GWT */
+
 .gwt-Label {
 	font-weight: bold;
 	color: #ffffff;
+	text-shadow: 2px 2px 3px #000000;
+}
+
+.gwt-RadioButton {
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 2px 2px 3px #000000;
+}
+
+.gwt-CheckBox {
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 2px 2px 3px #000000;
+}
+
+/* Catalog */
+
+.framesListHeader {
+	background-color: #007fff;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 2px 2px 3px #000000;
+}
+
+.framesListHeader:hover {
+	background-color: #0066cc;
+}
+
+.framesList {
+  border: 1px solid silver;
+  padding: 2px;
+  margin-bottom:6px;
+}
+
+.framesListPriceColumn {
+	font-weight: bold;
+	color: #007fff;
+	text-shadow: 2px 2px 3px #000000;
 }
 
 /* Page */
@@ -176,7 +247,7 @@ body {
 #search-text {
 	width: 170px;
 	padding: 7px 5px 5px 5px;
-	border: 1px solid #DDDDDD;
+	border: 2px solid #4b4b4b;
 	background: #FFFFFF;
 	text-transform: lowercase;
 	font: normal 11px Arial, Helvetica, sans-serif;
@@ -184,11 +255,17 @@ body {
 }
 
 #search-submit {
-	width: 50px;
-	height: 25px;
 	border: none;
-	background: #B9B9B9;
-	color: #000000;
+	background: #4b4b4b;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 2px 2px 3px #000000;
+}
+
+#search-submit:hover {
+	border: none;
+	background: #000000;
+	text-shadow: 2px 2px 3px #000000;
 }
 
 /** Example rules used by the template application (remove for your app) */
